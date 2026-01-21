@@ -1,4 +1,17 @@
 services:
+  console:
+    build:
+      context: ./rails_app
+      dockerfile: Dockerfile
+    container_name: rails-console-schema-test
+    environment:
+      - RAILS_ENV=development
+      - DATABASE_HOST=postgres
+    volumes:
+      - ./rails_app:/app
+    depends_on:
+      - postgres
+  
   postgres:
     image: postgres:18
     container_name: postgres-schema-test

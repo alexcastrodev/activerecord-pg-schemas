@@ -19,3 +19,17 @@ Also you need to set the `schema_search_path` in the `database.yml` file.
 docker compose up -d
 ruby test_ar_8.1.rb
 ```
+
+
+# Rails app
+
+## Build
+```bash
+docker compose build console
+```
+
+## Run
+
+```bash
+docker compose run --rm console bash
+```
