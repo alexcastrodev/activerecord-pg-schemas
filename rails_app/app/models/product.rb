@@ -1,0 +1,2 @@
+class Product < SecondaryRecord
+end
