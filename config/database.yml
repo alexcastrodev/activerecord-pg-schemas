@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+  database: xpostgres
+  schema_search_path: custom_schema
