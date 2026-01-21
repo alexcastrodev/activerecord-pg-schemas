@@ -6,6 +6,10 @@ But if you are using Rails, you don't "schema:create", you only have db:create, 
 
 Also you need to set the `schema_search_path` in the `database.yml` file.
 
+# Thread
+
+https://discuss.rubyonrails.org/t/automatically-creating-custom-schemas-in-multi-database-setup/90112
+
 ## Steps
 
 1. Create schema if not exist
