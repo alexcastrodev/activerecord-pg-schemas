@@ -4,6 +4,7 @@ FROM ruby:3.3.10
 RUN apt-get update -qq && apt-get install -y \
     libpq-dev \
     build-essential \
+    vim \
     curl \
     && rm -rf /var/lib/apt/lists/*
 

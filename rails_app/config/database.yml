@@ -24,7 +24,6 @@ development:
   primary:
     <<: *default
     database: app_development
-    schema_search_path: public
   secondary:
     <<: *default
     database: app_development

@@ -19,10 +19,6 @@ namespace :db do
         ActiveRecord::Base.establish_connection(db_config)
 
         schemas.each do |schema_name|
-          # Ignore public, right ? lesgo 
-          # (e.g schema_search_path: public,tenant_abc)
-          next if schema_name == "public"
-
           ActiveRecord::Base.connection.execute("CREATE SCHEMA IF NOT EXISTS #{schema_name}")
           puts "Schema '#{schema_name}' created for #{db_config.name} in #{env_name} (or already exists)."
         end
@@ -31,5 +27,11 @@ namespace :db do
 
     # Reconnect to primary
     ActiveRecord::Base.establish_connection(:primary)
+  end
+end
+
+%w[db:create db:prepare db:setup].each do |task_name|
+  Rake::Task[task_name].enhance do
+    Rake::Task["db:create_schema"].invoke
   end
 end
